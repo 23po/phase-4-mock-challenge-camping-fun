@@ -1,5 +1,5 @@
 class Signup < ApplicationRecord
-    validates :time, length: {in 0..23}
+    validates :time, length: {in: 0..23}
 
     belongs_to :camper
     belongs_to :activity
