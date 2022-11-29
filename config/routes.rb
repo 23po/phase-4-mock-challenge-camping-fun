@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
-  resources :campers do
-    resources :activities
+ 
+  resources :campers, only: [:index, :show] do 
+    resources :activities, only: [:index, :show]
   end
   
   resources :signups

@@ -4,8 +4,16 @@ class ActivitiesController < ApplicationController
         render json: activities
     end
 
-#     def show
-#         activity = Activity.find_by(id: params[:id])
-#         render json: activity
-#     end
+    #  def show
+    #     # if params[]
+    #     activity = Activity.find_by(id: params[:id])
+    #     if activity
+    #     render json: activity
+    #    else
+    #     render json: { error: "activity not found" }, status: :not_found
+    #    end
+        
+    #    end
+    
+    # end
  end
