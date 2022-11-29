@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-  resources :campers, only: [:index, :show] do 
+  resources :campers, only: [:index, :show, :create] do 
     resources :activities, only: [:index, :show]
   end
   

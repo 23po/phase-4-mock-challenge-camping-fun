@@ -12,4 +12,15 @@ class CampersController < ApplicationController
         render json: { error: "camper not found" }, status: :not_found
         end
     end
+
+    def create
+        camper = Camper.create!(camper_params)
+        render json: camper, status: :created
+    end
+
+    private
+     
+    def camper_params
+        params.permit(:name, :age)
+    end
 end
