@@ -6,6 +6,10 @@ class CampersController < ApplicationController
 
     def show
         camper = Camper.find_by(id: params[:id])
+        if camper
         render json: camper, include: :activities
+        else
+        render json: { error: "camper not found" }, status: :not_found
+        end
     end
 end
