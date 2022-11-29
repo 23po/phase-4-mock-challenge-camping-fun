@@ -7,7 +7,7 @@ class Camper < ApplicationRecord
         unless (age > 7 && age < 19)
           errors.add(:age, "must be between 18 and 8")
         end
-      end
+    end
     
 
     has_many :signups
