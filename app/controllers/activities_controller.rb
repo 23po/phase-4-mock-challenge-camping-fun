@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
      activity.destroy!
      head :no_content
      else
-    render json: { error: "activity not found" }, status: :not_found
+    render json: { error: "Activity not found" }, status: :not_found
     end
     end    
 
