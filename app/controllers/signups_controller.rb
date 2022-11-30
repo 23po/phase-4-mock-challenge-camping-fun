@@ -1,4 +1,5 @@
 class SignupsController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
     signups = Signup.all
@@ -21,5 +22,9 @@ class SignupsController < ApplicationController
         params.permit(:camper_id, :activity_id, :time)
     end
 
+
+ def render_unprocessable_entity(exception)
+        render json: {errors:  [exception.record.errors]}, status: :unprocessable_entity
+    end
 
 end
