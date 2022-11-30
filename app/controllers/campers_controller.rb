@@ -1,4 +1,6 @@
 class CampersController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
     def index
         campers = Camper.all
         render json: campers, each_serializer: JustCamperSerializer
@@ -23,4 +25,8 @@ class CampersController < ApplicationController
     def camper_params
         params.permit(:name, :age)
     end
+
+    def render_unprocessable_entity_response(exception)
+        render json: { errors: [exception.record.errors] }, status: :unprocessable_entity
+      end
 end
