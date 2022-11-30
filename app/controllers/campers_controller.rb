@@ -9,7 +9,7 @@ class CampersController < ApplicationController
         if camper
         render json: camper, include: :activities
         else
-        render json: { error: "camper not found" }, status: :not_found
+        render json: { error: "Camper not found" }, status: :not_found
         end
     end
 
